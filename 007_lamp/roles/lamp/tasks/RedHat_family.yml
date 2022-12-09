@@ -1,0 +1,23 @@
+- name: Install RedHat block
+  become: yes
+  tags:
+    - install
+  block:
+    - name: Install 3rd party repos
+      dnf:
+        enablerepo: codeready-builder-for-rhel-9-amd64-rpms
+        state: present
+
+    - name: Install LAMP
+      dnf:
+        name:
+          - epel-release
+          - epel-next-release
+          - httpd
+          - php
+          - php-mysql
+          - mariadb-server 
+        state: present
+      notify:
+        - start httpd
+        - start mariadb

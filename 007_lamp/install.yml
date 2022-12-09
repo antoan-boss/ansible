@@ -1,0 +1,9 @@
+---
+- name: LAMP playbook
+  hosts: 
+    # - ubuntu
+    # - debian
+    - centos
+
+  roles:
+    - lamp

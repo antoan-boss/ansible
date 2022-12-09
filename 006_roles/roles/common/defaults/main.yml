@@ -1,0 +1,8 @@
+---
+# defaults file for common
+php_version: 8.0
+bg_image_dest: "{{ ansible_user_dir }}/Pictures/bg.jpg"
+servers: 
+  - galaxy
+  - vulcan
+  - ameros

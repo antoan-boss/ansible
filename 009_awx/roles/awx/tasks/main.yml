@@ -1,0 +1,7 @@
+---
+# tasks file for awx
+- name: Print home
+  shell: echo $HOME
+    
+- name: List files
+  shell: ls -la

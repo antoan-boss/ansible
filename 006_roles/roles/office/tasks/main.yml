@@ -1,0 +1,15 @@
+---
+# tasks file for office
+- name: Install libreoffice
+  become: yes
+  apt:
+    name: libreoffice
+    update_cache: yes
+    state: present
+
+- name: Install pidgin
+  become: yes
+  apt:
+    name: pidgin
+    update_cache: yes
+    state: present

@@ -1,0 +1,8 @@
+[administrative_pcs]
+debian
+
+[development_pcs]
+centos
+
+[managemnt_pcs]
+ubuntu

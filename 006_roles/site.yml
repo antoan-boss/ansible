@@ -1,0 +1,5 @@
+---
+# file: site.yml
+- import_playbook: administrative.yml
+- import_playbook: development.yml
+- import_playbook: management.yml

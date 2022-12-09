@@ -1,0 +1,10 @@
+[webs]
+ubuntu ansible_connection=local ansible_become_pass='{{ ubuntu_sudo_pass }}'
+debian ansible_host=192.168.1.221 ansible_become_pass='{{ debian_sudo_pass }}'
+
+[dbs]
+centos ansible_host=192.168.1.100 ansible_become_pass='{{ centos_sudo_pass }}'
+
+[all:vars]
+ansible_user=osboxes
+ansible_port=22

@@ -1,0 +1,50 @@
+---
+- name: First playbook
+  hosts: 
+    - ubuntu
+  gather_facts: no
+
+  vars: 
+    my_var: matejmadeja
+    jobs[]:
+
+    names:
+      - name: jozo
+        surname: mrkva
+      - name: fero
+        surname: Chalo
+      - name: anicka
+        surname: Anova
+
+  tasks:
+    - name: Install cmatrix
+      become: yes
+      apt:
+        name: cmatrix
+        state: present
+      tags:
+        - install
+        - host
+
+    - name: Testing shell
+      shell: echo test
+      tags:
+        - shell
+        - install
+
+    - name: Print hostname
+      debug:
+        var: my_var
+      tags:
+        - host
+
+    - name: Template example
+      template:
+        src: ./template.j2
+        dest: "/tmp/{{ item.name }}.txt"
+      loop: "{{ item }}"
+      tags:
+        - template
+
+
+

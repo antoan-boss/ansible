@@ -1,0 +1,13 @@
+---
+- name: Second playbook
+  hosts: 
+    - ubuntu
+  gather_facts: yes
+
+  tasks:
+    - debug:
+        var: ansible_port
+      tags:
+        - host
+
+

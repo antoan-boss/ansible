@@ -1,0 +1,7 @@
+---
+- name: LAMP playbook
+  hosts: 
+    - amulidra_machine
+
+  roles:
+    - awx
